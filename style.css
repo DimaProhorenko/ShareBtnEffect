@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 10px;
+    --btn-width: 4rem;
+    --btn-height: 4rem;
+    --yt-color: #FF0000;
+    --twitter-color: #1DA1F2;
+    --dribbble-color: #ea4c89;
+    --whatsapp-color: #128C7E;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul {
+    list-style: none;
+}
+
+.share-btn {
+    position: relative;
+    width: calc(var(--btn-width) * 2.5);
+    height: calc(var(--btn-height) * 2.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.share-btn.open .link {
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.share-btn.open .link--top {
+    translate: -50% -130%;
+    rotate: -360deg;
+}
+
+.share-btn.open .link--bot {
+    translate: -50% 25%;
+    rotate: 360deg;
+}
+
+.share-btn.open .link--right {
+    translate: 30% -50%;
+    rotate: 360deg;
+}
+
+.share-btn.open .link--left {
+    translate: -130% -50%;
+    rotate: -360deg;
+}
+
+.btn,
+.link {
+    display: block;
+    width: var(--btn-width);
+    height: var(--btn-height);
+    text-align: center;
+    line-height: var(--btn-height);
+    border-radius: 50%;
+}
+
+.btn {
+    outline: none;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.13);
+    color: var(--twitter-color);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4.3px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 10;
+    transition: scale 300ms ease;
+}
+
+.link {
+    display: block;
+    width: var(--btn-width);
+    height: var(--btn-height);
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    transition: translate 300ms ease, opacity 300ms ease, rotate 300ms ease, scale 300ms ease;
+}
+
+.btn:hover,
+.link:hover {
+    scale: 1.1;
+}
+
+
+.link--top {
+    background-color: var(--yt-color);
+}
+
+.link--right {
+    background-color: var(--twitter-color);
+}
+
+.link--bot {
+    background-color: var(--dribbble-color);
+}
+
+.link--left {
+    background-color: var(--whatsapp-color);
+}
+
+/* .link--top {
+    top: 0;
+    left: 50%;
+    translate: -50% 0;
+    transform: translateY(50%);
+}
+
+.link--bot {
+    bottom: 0;
+    left: 50%;
+    translate: -50% 0;
+}
+
+.link--right {
+    top: 50%;
+    right: 0;
+    translate: 0 -50%;
+}
+
+.link--left {
+    top: 50%;
+    left: 0;
+    translate: 0 -50%;
+} */
